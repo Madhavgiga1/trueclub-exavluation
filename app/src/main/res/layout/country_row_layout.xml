@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="country"
+            type="com.example.trueclub.models.Country" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardBackgroundColor="@color/glightGray"
+            app:strokeColor="@color/mainactivitybg"
+            app:cardCornerRadius="7dp"
+            app:strokeWidth="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/country_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Country :"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/country_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:textColor="@color/darkviolet"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/anton"
+                    android:text="@{String.valueOf(country.countryId)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/country_text"
+                    app:layout_constraintStart_toEndOf="@+id/country_text"
+                    app:layout_constraintTop_toTopOf="@+id/country_text"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/Probablity_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="44dp"
+                    android:text="Probablity :"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/country_text" />
+
+                <TextView
+                    android:id="@+id/probablity_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:text="@{String.valueOf(country.probability)}"
+                    android:textColor="@color/BalticSeabgcolor"
+                    android:textSize="16sp"
+                    app:fontFamily="@font/anton"
+                    app:layout_constraintBottom_toBottomOf="@+id/Probablity_text"
+                    app:layout_constraintStart_toEndOf="@+id/Probablity_text"
+                    app:layout_constraintTop_toTopOf="@+id/Probablity_text"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
